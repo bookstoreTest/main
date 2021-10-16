@@ -19,18 +19,43 @@ $(function () {
 
         //验证密码：必须由字母，数字，下划线组成，并且长度为5到12位
         //1 获取密码输入框的内容
-        var usernameText = $("#password").val();
+        var passwordText = $("#password").val();
         //2 创建验证的正则表达式
-        var usernamePatt = /^\w{5,12}$/;
+        var passwordPatt = /^\w{5,12}$/;
         //3 使用test方法验证
-        if (!usernamePatt.test(usernameText)) {
+        if (!passwordPatt.test(passwordText)) {
             //4 提示用户结果
             //层次选择器 后代元素选择器
             $("span.errorMsg").text("密码不合法");
             return false;
         }
-
         $("span.errorMsg").text();
 
+        //验证确认密码：必须和密码相同
+        //1 获取确认密码输入框的内容
+        var repwdText = $("#repwd").val();
+        //2 和密码作比较
+        if (repwdText != passwordText) {
+            //3 提示用户结果
+            //层次选择器 后代元素选择器
+            $("span.errorMsg").text("两次输入密码不一致");
+            return false;
+        }
+        $("span.errorMsg").text();
+
+        //验证邮箱：必须由字母，数字，下划线组成，并且长度为5到12位
+        //1 获取邮箱输入框的内容
+        var emailText = $("#email").val();
+        //2 创建正则表达式
+        var emailPatt = /^[a-z\d]+(\.[a-z\d]+)*@([\da-z](-[\da-z])?)+(\.{1,2}[a-z]+)+$/;
+        //3 使用test方法验证
+        if (!emailPatt.test(emailText)) {
+            //4 提示用户结果
+            //层次选择器 后代元素选择器
+            $("span.errorMsg").text("邮箱不合法");
+            return false;
+        }
+
+        $("span.errorMsg").text();
     });
 })
