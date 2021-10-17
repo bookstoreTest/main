@@ -55,7 +55,13 @@ $(function () {
             $("span.errorMsg").text("邮箱不合法");
             return false;
         }
-
         $("span.errorMsg").text();
+
+        //验证验证码输入
+        // 去掉验证码前后的空格
+        //1 获取验证码输入框的内容
+        var codeText = $("#code").val();
+        //2 去空格
+        codeText =  $.trim(codeText)
     });
 })
