@@ -7,4 +7,5 @@ create table t_user(
     `password` varchar(32) not null ,
     `email` varchar(200)
 );
+insert into t_user(`username`,`password`,`email`) values('admin','admin','admin@EVA.com');
 
