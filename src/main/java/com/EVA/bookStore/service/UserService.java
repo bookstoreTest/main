@@ -12,7 +12,7 @@ public interface UserService {
     /**
      * 用户登录
      * @param user
-     * @return
+     * @return 如为null，表示失败
      */
     public User login(User user);
 

@@ -29,7 +29,8 @@ public class RegisterServlet extends HttpServlet {
         String password = req.getParameter("password");
         String email = req.getParameter("email");
         String code = req.getParameter("code");
-        //2.对比验证码。注意：若在前端校验，用户若在浏览器中修改代码，可以绕过验证码校验，产生安全隐患
+        //2.调用UserService处理业务
+        // 对比验证码。注意：若在前端校验，用户若在浏览器中修改代码，可以绕过验证码校验，产生安全隐患
         //因此，验证码在后端校验
         if("abcd".equalsIgnoreCase(code)){
             //2.2检查用户名是否可用
