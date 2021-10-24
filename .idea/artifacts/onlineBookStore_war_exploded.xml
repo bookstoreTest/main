@@ -27,6 +27,7 @@
         <element id="file-copy" path="$PROJECT_DIR$/target/onlineBookStore-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="onlineBookStore/web/Web" />
+      <element id="dir-copy" path="D:/software/tomcatServer/apache-tomcat-8.5.69/webapps" />
     </root>
   </artifact>
 </component>
