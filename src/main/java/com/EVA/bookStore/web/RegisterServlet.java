@@ -1,7 +1,5 @@
 package com.EVA.bookStore.web;
 
-import com.EVA.bookStore.dao.UserDao;
-import com.EVA.bookStore.dao.impl.UserDaoImpl;
 import com.EVA.bookStore.pojo.User;
 import com.EVA.bookStore.service.UserService;
 import com.EVA.bookStore.service.impl.UserServiceImpl;
@@ -37,16 +35,16 @@ public class RegisterServlet extends HttpServlet {
             if(userService.existsUsername(username)==false){
                 //可以注册
                userService.registerUser(new User(null,username,password,email));
-               req.getRequestDispatcher("/pages/user/regist_success.html").forward(req,resp);
+               req.getRequestDispatcher("pages/user/regist_success.jsp").forward(req,resp);
 
             }else {
                 //跳回注册页面
-                req.getRequestDispatcher("pages/user/regist.html").forward(req,resp);
+                req.getRequestDispatcher("pages/user/regist.jsp").forward(req,resp);
             }
 
         }else {
             //跳回注册页面
-            req.getRequestDispatcher("pages/user/regist.html").forward(req,resp);
+            req.getRequestDispatcher("pages/user/regist.jsp").forward(req,resp);
         }
     }
 }

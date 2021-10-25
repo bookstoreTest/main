@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.net.http.HttpRequest;
+
 
 public class LoginServlet extends HttpServlet {
     private UserService userService = new UserServiceImpl();
@@ -20,11 +20,11 @@ public class LoginServlet extends HttpServlet {
         String password = req.getParameter("password");
         //2.调用UserService处理业务
         if (userService.login(new User(null,username,password,null))== null){
-            req.getRequestDispatcher("/pages/user/login.html").forward(req,resp);
+            req.getRequestDispatcher("pages/user/login.jsp").forward(req,resp);
 
         }else {
 
-            req.getRequestDispatcher("/pages/user/login_success.html").forward(req,resp);
+            req.getRequestDispatcher("pages/user/login_success.jsp").forward(req,resp);
         }
     }
 }
